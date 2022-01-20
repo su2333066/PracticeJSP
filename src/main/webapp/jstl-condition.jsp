@@ -5,71 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GUGUDAN</title>
 </head>
 <body>
-    <h1>JSTL 조건문</h1>
-<%  
-    int age = 77;    
-%>
-<% if(age < 20 || age > 59) { %>
-    <div>
-        할인 대상입니다.
-    </div>
-<% } 
-   if(age >= 20 && age <= 59) { %>
-    <div>
-        할인 대상이 아닙니다.
-    </div>
-<% } %>    
-<hr>
-<% if(age < 20) { %>
-    <div>
-        할인 대상입니다.
-    </div>
-<% } else if(age >= 60) { %>
-    <div>
-        할인 대상입니다.
-    </div>
-<% } else { %>
+    <h1>JSTL 구구단</h1>
 
-    <div>
-        할인 대상이 아닙니다.
-    </div>
-<% } %>
-<hr>
-<c:set var="age" value="77" />
-
-<c:if test="${ age < 20 || age > 59 }">
-    <div>
-        할인 대상입니다.
-    </div>
-</c:if>
-<c:if test="${ age >= 20 && age <= 59 }">
-    <div>
-        할인 대상이 아닙니다.
-    </div>
-</c:if>
-
-<hr>
-<c:choose>
-    <c:when test="${ age < 20 }">
-        <div>
-            할인 대상입니다.
-        </div>
-    </c:when>
-    <c:when test="${ age > 59 }">
-        <div>
-            할인 대상입니다.
-        </div>
-    </c:when>
-    <c:otherwise>
-        <div>
-            할인 대상이 아닙니다.
-        </div>
-    </c:otherwise>
-</c:choose>
-
-
+	<c:forEach var="dan" begin="${fdan}" end="${ldan}">
+		<c:forEach var="gop" begin="1" end="9">
+			${dan} X ${gop} = ${dan*gop} <br />
+		</c:forEach>
+	</c:forEach>
 </body>
 </html>

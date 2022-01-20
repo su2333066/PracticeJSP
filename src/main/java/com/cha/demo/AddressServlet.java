@@ -20,16 +20,35 @@ public class AddressServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		AddrDB db = new AddrDB();
-		ArrayList<Addr> addrList = db.selectDatas();
 		
-		request.setAttribute("addrList", addrList);
-		request.setAttribute("num", 123);
-		request.setAttribute("str", "hello");
+		int menu = Integer.parseInt(request.getParameter("menu"));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
-		rd.forward(request, response);
+		switch(menu) {
+			
+		case 1: 
+			
+			//주소록 삽입
+			db.insertData();
+			
+			ArrayList<Addr> addrList = db.selectDatas();
+			
+			request.setAttribute("list", addrList);
+					
+			RequestDispatcher rd = request.getRequestDispatcher("/insert.jsp");
+			rd.forward(request, response);
+			
 		
-		
+		case 2:
+			
+			//주소록 조회
+			ArrayList<Addr> addrList2 = db.selectDatas();
+					
+			request.setAttribute("list", addrList2);
+					
+			RequestDispatcher rd2 = request.getRequestDispatcher("/list.jsp");
+			rd2.forward(request, response);
+			
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
