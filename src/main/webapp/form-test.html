@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Test</title>
+</head>
+<body>
+<h1>Form Test</h1>
+<!-- hr 태그 : 줄긋기-->
+<hr>    
+
+<!-- div 태그 : 기능은 딱히 없고 자동 줄바꿈 된다. 영역을 구분-->
+<div>
+    <!-- form 태그 : url을 완성시켜서 주소창에 적용시켜줌 -->
+    <!--   - action 속성 : 목적 url -->
+    <!--   - input을 가져다가 queryString을 만들어줌 -->
+    <form action="https://www.naver.com">
+        
+        <!-- input 태그 : 데이터를 입력할 수 있는 다양한 형태의 ui를 제공 -->
+        <!--   - type 속성 : 어떤 형태로 쓸거냐 -->
+        <!--   - name 속성 : 어떤 이름으로 붙여줄거냐 -->
+        <!--   - value 속성 : 어떤 데이터를 쓸거냐 -->
+        <input type="text"> <!-- 입력창 -->
+        <input type="submit"> <!-- 전송 버튼 -->
+        <input type="hidden"> <!-- 숨김 데이터 -->
+        
+    </form>
+</div>
+<hr>
+<div>
+    <!-- where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=날씨 -->
+    <h3>네이버 검색</h3>
+    <form action="https://search.naver.com/search.naver">
+        <input type="hidden" name="where" value="nexearch"/>
+        <input type="hidden" name="sm" value="top_hty"/>
+        <input type="hidden" name="fbm" value="1"/>
+        <input type="hidden" name="ie" value="utf8"/>
+        <input type="text" name="query"/>
+        <input type="submit"/>
+    </form>
+</div>
+<hr>
+<!-- a 태그 : 페이지 이동(url 변경) == 링크가 됨 -->
+<!--   - href 속성 : 변경될 url -->
+<a href="https://www.naver.com">네이버로 가기</a>
+
+</body>
+</html>
