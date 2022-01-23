@@ -17,10 +17,5 @@
         <br />
         <input type="submit" value="주소록 등록" />
     </form>
-    
-    <h1>주소록 목록</h1>
-    <form action="http://localhost:9010/addr/list">
-    	<input type="submit" value="주소록 목록" />
-    </form>
 </body>
 </html> 
