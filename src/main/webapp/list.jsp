@@ -9,11 +9,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSTL LIST</title>
+<title>Insert title here</title>
 </head>
 <body>
 <h1>주소 목록</h1>
-<c:forEach items="${list}" var="addr">
+<c:forEach items="${addrList}" var="addr">
     <div>
         번호 : ${ addr.idx } <br/>
         이름 : ${ addr.name }<br/> 
